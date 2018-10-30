@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="cipweb.list">
+      <field name="name">CIPWeb list</field>
+      <field name="model">cipweb.cipweb</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="cipweb.action_window">
+      <field name="name">CIPWeb window</field>
+      <field name="res_model">cipweb.cipweb</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="cipweb.action_server">
+      <field name="name">CIPWeb server</field>
+      <field name="model_id" ref="model_cipweb_cipweb"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="CIPWeb" id="cipweb.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="cipweb.menu_1" parent="cipweb.menu_root"/>
+    <menuitem name="Menu 2" id="cipweb.menu_2" parent="cipweb.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="cipweb.menu_1_list" parent="cipweb.menu_1"
+              action="cipweb.action_window"/>
+    <menuitem name="Server to list" id="cipweb" parent="cipweb.menu_2"
+              action="cipweb.action_server"/>
+    -->
+  </data>
+</odoo>

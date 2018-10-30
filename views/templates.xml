@@ -1,0 +1,68 @@
+<odoo>
+    <data>
+        <template id="index">
+            <title>Academy</title>
+            <t t-foreach="teachers" t-as="teacher">
+                <p>
+                    <t t-esc="teacher"/>
+                </p>
+            </t>
+        </template>
+
+
+        <template id="model">
+            <title>Academy</title>
+            <t t-foreach="teachers" t-as="teacher">
+                <p><t t-esc="teacher.id"/> <t t-esc="teacher.name"/></p>
+            </t>
+        </template>
+
+       <template id="website">
+            <t t-call="website.layout">
+                <t t-set="title">Academy</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <t t-foreach="teachers" t-as="teacher">
+                             <p><a t-attf-href="/cipwebsite/{{ slug(teacher) }}">
+                              <t t-esc="teacher.name"/></a>
+                            </p>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+
+
+        <template id="biography">
+            <t t-call="website.layout">
+                <t t-set="title">Cip Website</t>
+                <div class="oe_structure"/>
+                <div class="oe_structure">
+                    <div class="container">
+                        <p><t t-esc="person.id"/> <t t-esc="person.name"/></p>
+                    </div>
+                </div>
+                <div class="oe_structure"/>
+            </t>
+        </template>
+        <!-- <template id="listing"> -->
+        <!--   <ul> -->
+        <!--     <li t-foreach="objects" t-as="object"> -->
+        <!--       <a t-attf-href="#{ root }/objects/#{ object.id }"> -->
+        <!--         <t t-esc="object.display_name"/> -->
+        <!--       </a> -->
+        <!--     </li> -->
+        <!--   </ul> -->
+        <!-- </template> -->
+        <!-- <template id="object"> -->
+        <!--   <h1><t t-esc="object.display_name"/></h1> -->
+        <!--   <dl> -->
+        <!--     <t t-foreach="object._fields" t-as="field"> -->
+        <!--       <dt><t t-esc="field"/></dt> -->
+        <!--       <dd><t t-esc="object[field]"/></dd> -->
+        <!--     </t> -->
+        <!--   </dl> -->
+        <!-- </template> -->
+    </data>
+</odoo>
